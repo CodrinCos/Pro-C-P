@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD5C3F70-EC37-4F00-8AC4-A55BB7968945}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FireEscapeSimulator</RootNamespace>
+    <AssemblyName>FireEscapeSimulator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AirFlow.cs" />
+    <Compile Include="FileHelper.cs" />
+    <Compile Include="FireExtinguisher.cs" />
+    <Compile Include="IMapInfo.cs" />
+    <Compile Include="PathFactory.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Map.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonParametersPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonParametersPopup.Designer.cs">
+      <DependentUpon>PersonParametersPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation.cs" />
+    <Compile Include="SimulationState.cs" />
+    <Compile Include="Staff.cs" />
+    <Compile Include="Teacher.cs" />
+    <Compile Include="Tile.cs" />
+    <Compile Include="TileDoor.cs" />
+    <Compile Include="TileExit.cs" />
+    <Compile Include="TileFloor.cs" />
+    <Compile Include="TileWall.cs" />
+    <Compile Include="TileWindow.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonParametersPopup.resx">
+      <DependentUpon>PersonParametersPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TestMap.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FontysFloor.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall_side.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floor_17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floor_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floor_171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floor_172.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floor_173.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floor_174.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floor_24.png" />
+    <None Include="Resources\Floor_23.png" />
+    <None Include="Resources\Floor_22.png" />
+    <None Include="Resources\Floor_18.png" />
+    <None Include="Resources\Floor_21.png" />
+    <None Include="Resources\Floor_20.png" />
+    <None Include="Resources\Floor_19.png" />
+    <None Include="Resources\window3.png" />
+    <None Include="Resources\window1.png" />
+    <None Include="Resources\window2.png" />
+    <None Include="Resources\window_closed.png" />
+    <None Include="Resources\pool-table.png" />
+    <None Include="Resources\chair1.png" />
+    <None Include="Resources\chair2.png" />
+    <None Include="Resources\chair3.png" />
+    <None Include="Resources\door-open.png" />
+    <None Include="Resources\door-closed.png" />
+    <None Include="Resources\door-closed-vertical.png" />
+    <None Include="Resources\desk.png" />
+    <Content Include="Resources\fireExtinguisher.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
